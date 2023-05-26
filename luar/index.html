@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kalam:wght@300;400;700&family=Mogra&family=Pacifico&family=Righteous&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Luar-2.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="top-text">
+            <h1>Luar</h1>
+            <h3>Ювелірні вироби преміум якості</h3>
+    </div>
+
+    <div id="container" v-cloak>
+        <div class="search-wrap">
+            <label for="search-inp">Знайти за назвою/ціною:</label>
+            <input type="text" v-model="search" v-on:keypress.enter="myFilter" id="search-inp">
+        </div>
+        <div class="content">
+            <div class="menu">
+                <ul class="menu-list">
+                    <li v-bind:class="{selected: number== index}" v-for="(item, index) in nameArr"
+                        v-on:click="showNotebook(index)">
+                        {{item}}
+                    </li>
+                </ul>
+            </div>
+            <div class="card-wrap">
+                <div class="card" v-for="(item, index) in chooseNotebooks"
+                    v-on:mouseenter="{hover = true; hoverNumber = index}" v-on:mouseleave="hover = false">
+
+
+                    <div class="div-img">
+                        <img v-bind:src="item.image" alt="">
+                    </div>
+                    <div class="card-name card-item">
+                        <b>Назва: </b> {{item.name}}
+                    </div>
+                    <div class="card-item price-div">
+                        <p> <b>Ціна: </b> {{item.price}} грн</p>
+                    </div>
+                </div>
+                <div class="no-info" v-if="chooseNotebooks.length == 0">
+                    <p>У нас ще нема інформації щодо моделей цієї марки</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
