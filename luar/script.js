@@ -10,7 +10,7 @@ let NoteApp = {
                 {
                     name: 'Сережки',
                     price: '100',
-                    image: '1.jpg',
+                    image: '1.JPG',
                 },
                 {
                     name: 'Сережки',
@@ -220,22 +220,22 @@ let NoteApp = {
                 {
                     name: 'Браслети',
                     price: '110',
-                    image: '35.jpg',
+                    image: '35.JPG',
                 },
                 {
                     name: 'Браслети',
                     price: '120',
-                    image: '36.jpg',
+                    image: '36.JPG',
                 },
                 {
                     name: 'Браслети',
                     price: '110',
-                    image: '37.jpg',
+                    image: '37.JPG',
                 }, 
                 {
                     name: 'Браслети',
                     price: '100',
-                    image: '38.jpg',
+                    image: '38.JPG',
                 },
                 {
                     name: 'Браслети',
